@@ -20,6 +20,6 @@ abstract public class BaseTest {
                 "enableVideo", true
         ));
         Configuration.browserCapabilities = capabilities;
-         
+
     }
  }
