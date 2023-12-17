@@ -29,14 +29,13 @@ dependencies {
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
             "org.junit.jupiter:junit-jupiter:5.10.0",
-            'org.slf4j:slf4j-simple:2.0.7',
-            'com.github.javafaker:javafaker:1.0.2'
+            "org.slf4j:slf4j-simple:2.0.7",
+            "com.github.javafaker:javafaker:1.0.2"
     )
 }
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     useJUnitPlatform()
-
     testLogging {
         lifecycle {
             events "started", "skipped", "failed", "standard_error", "standard_out"
@@ -45,7 +44,7 @@ tasks.withType(Test) {
     }
 }
 
-task wink_smoke_test(type: Test) {
+tasks.register("wink_smoke_test", Test) {
     useJUnitPlatform {
         includeTags("SMOKE")
     }
