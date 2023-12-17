@@ -44,3 +44,9 @@ tasks.withType(Test) {
         }
     }
 }
+
+task wink_smoke_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("SMOKE")
+    }
+}
