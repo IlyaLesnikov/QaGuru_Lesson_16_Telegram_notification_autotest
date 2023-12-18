@@ -8,11 +8,11 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-public class WinkTests extends BaseTest {
+public class StartTests extends BaseTest {
     MainPage mP = new MainPage();
     @BeforeEach
     public void openMainPage() {
-        step("Открытие главной страницы", () -> open("https://wink.ru/"));
+        step("Открытие главной страницы", () -> open("https://start.ru/"));
     }
 
     @Test
