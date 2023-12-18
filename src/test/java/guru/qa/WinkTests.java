@@ -12,7 +12,7 @@ public class WinkTests extends BaseTest {
     MainPage mP = new MainPage();
     @BeforeEach
     public void openMainPage() {
-        step("Открытие главной страницы", () -> open("https://demoqa.com/automation-practice-form"));
+        step("Открытие главной страницы", () -> open("https://wink.ru/"));
     }
 
     @Test
@@ -20,7 +20,7 @@ public class WinkTests extends BaseTest {
     @Link("https://qa.guru/pl/teach/control/lesson/view?id=305964703")
     @Tag("SMOKE")
     protected void searchForContentThroughTheSearchBarTest() {
-        step("Открытие строки поиска", () -> mP.deleteOne("Тест"));
-        step("Ввод значения в строку поиска", () -> mP.deleteTwo("Тест 2"));
+        step("Открытие строки поиска", () -> mP.pressSearchButton());
+        step("Ввод значения в строку поиска", () -> mP.fillSearchField("Левша"));
     }
 }
