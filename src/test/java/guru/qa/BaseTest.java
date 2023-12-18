@@ -11,7 +11,6 @@ abstract public class BaseTest {
     public static void setUp() {
         Configuration.browserSize = "1600х900";
         Configuration.pageLoadStrategy = "eager";
-
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         /*
         DesiredCapabilities capabilities = new DesiredCapabilities();
