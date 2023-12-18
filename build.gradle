@@ -34,8 +34,9 @@ dependencies {
     )
 }
 
-tasks.withType(Test).configureEach {
+tasks.withType(Test) {
     useJUnitPlatform()
+
     testLogging {
         lifecycle {
             events "started", "skipped", "failed", "standard_error", "standard_out"
@@ -44,8 +45,9 @@ tasks.withType(Test).configureEach {
     }
 }
 
-tasks.register("wink_smoke_test", Test) {
+task demoqa_smoke_test(type: Test) {
     useJUnitPlatform {
         includeTags("SMOKE")
     }
 }
+
