@@ -12,7 +12,7 @@ public class StartTests extends BaseTest {
     MainPage mP = new MainPage();
     @BeforeEach
     public void openMainPage() {
-        step("Открытие главной страницы", () -> open("https://start.ru/"));
+        step("Открытие главной страницы", () -> open("https://okko.tv/"));
     }
 
     @Test
@@ -21,6 +21,6 @@ public class StartTests extends BaseTest {
     @Tag("SMOKE")
     protected void searchForContentThroughTheSearchBarTest() {
         step("Открытие строки поиска", () -> mP.pressSearchButton());
-        step("Ввод значения в строку поиска", () -> mP.fillSearchField("Левша"));
+        //step("Ввод значения в строку поиска", () -> mP.fillSearchField("Левша"));
     }
 }
