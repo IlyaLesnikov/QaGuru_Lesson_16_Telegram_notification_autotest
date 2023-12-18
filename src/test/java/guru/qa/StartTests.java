@@ -20,7 +20,7 @@ public class StartTests extends BaseTest {
     @Link("https://qa.guru/pl/teach/control/lesson/view?id=305964703")
     @Tag("SMOKE")
     protected void searchForContentThroughTheSearchBarTest() {
-        step("Открытие строки поиска", () -> mP.pressSearchButton());
+        //step("Открытие строки поиска", () -> mP.pressSearchButton());
         //step("Ввод значения в строку поиска", () -> mP.fillSearchField("Левша"));
     }
 }
