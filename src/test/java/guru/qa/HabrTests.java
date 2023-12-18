@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
-
-public class StartTests extends BaseTest {
+@DisplayName("Модуль поиска")
+public class HabrTests extends BaseTest {
     MainPage mP = new MainPage();
     @BeforeEach
     public void openMainPage() {
-        step("Открытие главной страницы", () -> open("https://okko.tv/"));
+        step("Открытие главной страницы", () -> open("https://habr.com/ru/feed/"));
     }
 
     @Test
@@ -20,7 +20,7 @@ public class StartTests extends BaseTest {
     @Link("https://qa.guru/pl/teach/control/lesson/view?id=305964703")
     @Tag("SMOKE")
     protected void searchForContentThroughTheSearchBarTest() {
-        //step("Открытие строки поиска", () -> mP.pressSearchButton());
-        //step("Ввод значения в строку поиска", () -> mP.fillSearchField("Левша"));
+        step("Открытие строки поиска", () -> mP.pressSearchButton());
+        step("Ввод значения в строку поиска", () -> mP.fillSearchField("Тестирование"));
     }
 }

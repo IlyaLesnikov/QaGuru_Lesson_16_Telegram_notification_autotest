@@ -5,8 +5,8 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage {
-    private final SelenideElement searchButton = $("[test-id='mnav_search']");
-    private final SelenideElement searchField = $("[class*='input-text']");
+    private final SelenideElement searchButton = $("[class*='icon_search']");
+    private final SelenideElement searchField = $("[class*='input-text-decorated__input']");
     public MainPage pressSearchButton() {
         searchButton.click();
 
