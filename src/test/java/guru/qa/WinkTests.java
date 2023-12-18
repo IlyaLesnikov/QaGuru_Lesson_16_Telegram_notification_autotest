@@ -18,7 +18,6 @@ public class WinkTests extends BaseTest {
         step("Открытие главной страницы", () -> open("https://wink.ru/"));
     }
 
-    @Tag("SMOKE")
     @ParameterizedTest
     @ValueSource(strings = {
             "Джентльмены",
@@ -26,6 +25,7 @@ public class WinkTests extends BaseTest {
     })
     @DisplayName("Поиск контента через строку поиска")
     @Link("https://qa.guru/pl/teach/control/lesson/view?id=305964703")
+    @Tag("SMOKE")
     protected void searchForContentThroughTheSearchBar(String name) {
         step("Открытие строки поиска", () -> mP.pressSearchButton());
         step("Ввод значения в строку поиска", () -> mP.fillSearchField(name));
