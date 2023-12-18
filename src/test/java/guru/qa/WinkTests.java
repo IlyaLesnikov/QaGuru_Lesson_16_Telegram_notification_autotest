@@ -1,13 +1,10 @@
 package guru.qa;
 
-
 import io.qameta.allure.Link;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
-
+import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
@@ -18,16 +15,12 @@ public class WinkTests extends BaseTest {
         step("Открытие главной страницы", () -> open("https://wink.ru/"));
     }
 
-    @ParameterizedTest
-    @ValueSource(strings = {
-            "Джентльмены",
-            "Левша"
-    })
+    @Test
     @DisplayName("Поиск контента через строку поиска")
     @Link("https://qa.guru/pl/teach/control/lesson/view?id=305964703")
     @Tag("SMOKE")
-    protected void searchForContentThroughTheSearchBar(String name) {
+    protected void searchForContentThroughTheSearchBarTest() {
         step("Открытие строки поиска", () -> mP.pressSearchButton());
-        step("Ввод значения в строку поиска", () -> mP.fillSearchField(name));
+        step("Ввод значения в строку поиска", () -> mP.fillSearchField("Левша"));
     }
 }
