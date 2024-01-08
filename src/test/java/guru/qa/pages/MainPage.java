@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage {
     private final SelenideElement searchField = $("[class*='autocomplete-input']");
-    private final SelenideElement searchButton = $("[value='Найти']");
+    private final SelenideElement searchButton = $("[value='Search']");
     public MainPage fillInTheSearchField(String productName) {
         searchField.setValue(productName);
 
