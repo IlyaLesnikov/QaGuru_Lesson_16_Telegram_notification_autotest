@@ -47,6 +47,6 @@ public class EbayTest extends BaseTest {
         mainPage.clickingOnTheSearchButton();
         });
         step("Добавление товара в избранное", () -> resultSearchPage.addingAnItemToFavorites());
-        step("Проверка приветствия на веб-форме 'Авторизация'", () -> assertComponents.assertText("Здравствуйте!"));
+        step("Проверка приветствия на веб-форме 'Авторизация'", () -> assertComponents.assertText("Hello"));
     }
 }
