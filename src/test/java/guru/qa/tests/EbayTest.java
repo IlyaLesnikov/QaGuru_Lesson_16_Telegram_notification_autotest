@@ -24,13 +24,16 @@ public class EbayTest extends BaseTest {
     AssertComponents assertComponents = new AssertComponents();
     @BeforeEach
     protected void allureStepsAndOpenBrowser() {
-        open("https://www.ebay.com/");
+        step("Открытие главной страницы", () -> open("https://www.ebay.com/"));
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @AfterEach
     protected void allureScreenshotAndVideoAndLoggs() {
         Attach.screenshotAs("Screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        Attach.addVideo();
     }
     @ParameterizedTest
     @ValueSource(strings = {
